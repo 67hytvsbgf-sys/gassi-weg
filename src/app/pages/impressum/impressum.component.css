@@ -1,0 +1,33 @@
+.impressum-section {
+  padding-top: 3rem;
+  max-width: 700px;
+}
+
+.impressum-card {
+  background: white;
+}
+
+.impressum-card h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin: 1.5rem 0 0.5rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--pop-magenta);
+}
+
+.impressum-card h2:first-child {
+  margin-top: 0;
+}
+
+.impressum-card p {
+  color: #444;
+  line-height: 1.7;
+}
+
+.impressum-card a {
+  color: var(--pop-cyan);
+  font-weight: 700;
+  text-decoration: underline;
+}
