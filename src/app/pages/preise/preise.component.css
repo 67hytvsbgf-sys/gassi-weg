@@ -1,0 +1,128 @@
+.preise-hero {
+  padding-top: 3rem;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.price-card.popular {
+  transform: scale(1.04);
+  border-width: 4px;
+  background: linear-gradient(180deg, #fff 0%, #FFF0F5 100%);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--pop-magenta);
+  color: white;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 2px solid var(--pop-black);
+  white-space: nowrap;
+}
+
+.pkg-name {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.pkg-duration {
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.pkg-price {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.pkg-price .amount {
+  font-family: 'Bangers', cursive;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--pop-black);
+}
+
+.pkg-price .currency {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-top: 0.4rem;
+}
+
+.pkg-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.pkg-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.pkg-features li {
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.pkg-features li:last-child {
+  border-bottom: none;
+}
+
+.accent-cyan .pkg-price .amount { color: #0D9488; }
+.accent-magenta .pkg-price .amount { color: var(--pop-magenta); }
+.accent-yellow .pkg-price .amount { color: #D97706; }
+
+.extra-info {
+  max-width: 640px;
+  margin: 0 auto;
+  background: #F0FDFA;
+}
+
+.extra-info h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.extra-info ul {
+  padding-left: 1.2rem;
+  color: #444;
+}
+
+.extra-info li {
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 700px) {
+  .price-card.popular {
+    transform: none;
+  }
+}
