@@ -1,0 +1,71 @@
+<section class="section anfrage-section">
+  <h1 class="section-title">Anfrage senden</h1>
+  <p class="section-sub">Erzähl mir kurz von dir und deinem Hund – ich melde mich so schnell wie möglich zurück.</p>
+
+  @if (success) {
+    <div class="success-box card">
+      <div class="success-icon">🎉</div>
+      <h2>Danke für deine Anfrage!</h2>
+      <p>Ich habe deine Nachricht erhalten und melde mich in Kürze bei dir.</p>
+      <button class="btn btn-primary" (click)="success = false">Weitere Anfrage</button>
+    </div>
+  } @else {
+    <form class="card form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Dein Name *</label>
+          <input id="name" type="text" formControlName="name" placeholder="Max Mustermann">
+          @if (submitted && f['name'].errors) {
+            <span class="error">Bitte gib deinen Namen an.</span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input id="email" type="email" formControlName="email" placeholder="max@mail.de">
+          @if (submitted && f['email'].errors) {
+            <span class="error">Gültige E-Mail erforderlich.</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Telefon (optional)</label>
+          <input id="phone" type="tel" formControlName="phone" placeholder="+49 ...">
+        </div>
+        <div class="form-group">
+          <label for="dogName">Name des Hundes *</label>
+          <input id="dogName" type="text" formControlName="dogName" placeholder="Bello">
+          @if (submitted && f['dogName'].errors) {
+            <span class="error">Wie heißt dein Hund?</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dogBreed">Rasse / Größe</label>
+          <input id="dogBreed" type="text" formControlName="dogBreed" placeholder="z. B. Labrador, klein / mittel / groß">
+        </div>
+        <div class="form-group">
+          <label for="package">Gewünschtes Paket *</label>
+          <select id="package" formControlName="package">
+            <option value="30">Kurzrunde – 30 Min (12 €)</option>
+            <option value="60">Standard – 60 Min (18 €)</option>
+            <option value="90">Extra-Lang – 90 Min (25 €)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Nachricht *</label>
+        <textarea id="message" formControlName="message" rows="4" placeholder="Wann brauchst du den Service? Besondere Wünsche oder Infos zu deinem Hund?"></textarea>
+        @if (submitted && f['message'].errors) {
+          <span class="error">Bitte schreib eine kurze Nachricht.</span>
+        }
+      </div>
+
+      <button type="submit" class="btn btn-primary submit-btn">Anfrage absenden 🚀</button>
+    </form>
+  }
+</section>
